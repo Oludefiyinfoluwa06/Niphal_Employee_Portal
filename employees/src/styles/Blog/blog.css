@@ -1,0 +1,120 @@
+.blog {
+    padding: 20px;
+}
+
+.blog-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 30px;
+    box-shadow: 0 0 10px #ccc;
+}
+
+.blog-nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.blog-nav ul li a {
+    text-decoration: none;
+    color: #000;
+}
+
+.blog-nav ul li a:hover {
+    color: #daa520;
+    transition: .5s;
+}
+
+/* Empty Blog */
+.empty-blog {
+    position: absolute;
+    top: 50%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.empty-blog img {
+    width: 200px;
+    height: 200px;
+}
+
+.blogs {
+    display: flex;
+    justify-content: flex-start;
+    padding: 25px;
+    gap: 25px;
+}
+
+.blogs .blog-card {
+    width: calc((100% / 4) - 25px);
+    position: relative;
+}
+
+.blog-card img {
+    width: 100%;
+    height: 150px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+
+.blog-card p {
+    position: absolute;
+    top: 10px;
+    left: 5px;
+    background: #fff;
+    color: #000;
+    padding: 10px;
+    border-radius: 7px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.blog-card a {
+    color: #000;
+    text-decoration: none;
+}
+
+.blog-card a:hover {
+    color: #daa520;
+    text-decoration: underline;
+}
+
+.blog-detail {
+    margin: 20px;
+}
+
+.blog-detail img {
+    width: 100%;
+    height: 230px;
+    object-position: center;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.blog-detail .blog-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 20px;
+}
+
+@media screen and (max-width: 1200px) {
+    .empty-blog {
+        left: 50%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .blogs .blog-card {
+        width: calc((100% / 2) - 25px);
+    }
+}

@@ -1,0 +1,71 @@
+.add-employee {
+    margin: 30px;
+    width: 100%;
+    overflow-y: auto;
+}
+
+.add-employee .inputs {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin: 15px 0;
+}
+
+.inputs .input {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 93%;
+    gap: 15px;
+}
+
+.input-box {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 6px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 8px;
+}
+
+.add-employee textarea {
+    min-width: 93%;
+    max-width: 93%;
+    min-height: 100px;
+    max-height: 100px;
+    padding: 10px;
+}
+
+.add-employee button {
+    margin-top: 15px;
+    border: none;
+    border: 1px solid #000;
+    border-radius: 50px;
+    color: #000;
+    background: #fff;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+.add-employee button:hover {
+    color: #fff;
+    background: #000;
+    transition: .5s;
+}
+
+.error {
+    margin: 10px 0;
+    background: #f8d7da;
+    color: #721c24;
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+    width: 93%;
+}

@@ -1,0 +1,72 @@
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.profile img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.profile p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+}
+
+.links {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background: #fff;
+    padding: 15px;
+    width: 150px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #ccc;
+    gap: 10px;
+}
+
+.links li {
+    width: 100%;
+}
+
+.links li a {
+    color: #000;
+    text-decoration: none;
+    width: 100%;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.links li a:hover {
+    color: #daa520;
+    transition: .5s;
+}
+
+.links li button {
+    color: #000;
+    width: 100%;
+    background: #ccc;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 8px;
+}

@@ -1,0 +1,125 @@
+.add-blog {
+    margin: 30px;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.add-blog .inputs {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin: 15px 0;
+}
+
+.inputs .input {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    width: 93%;
+    gap: 15px;
+}
+
+.input-box {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 6px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.add-blog input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #464646;
+    border-radius: 3px;
+}
+
+.add-blog textarea, .input-box select {
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 300px;
+    max-height: 300px;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.input-box select {
+    min-height: 40px;
+    max-height: 40px;
+    min-width: 93%;
+    max-width: 93%;
+}
+
+.add-blog button {
+    margin-top: 15px;
+    border: none;
+    border: 1px solid #000;
+    border-radius: 50px;
+    color: #000;
+    background: #fff;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+.add-blog button:hover {
+    color: #fff;
+    background: #000;
+    transition: .5s;
+}
+
+.error {
+    margin: 10px 0;
+    background: #f8d7da;
+    color: #721c24;
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+    width: 93%;
+}
+
+.blog-header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+.blog-header .back-icon {
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1200px) {
+    .add-blog {
+        width: 100%;
+    }
+
+    .add-blog input, .add-blog textarea, .add-blog select {
+        min-width: 93%;
+        max-width: 93%;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .add-blog {
+        width: 100%;
+    }
+
+    .add-blog input {
+        min-width: 100%;
+        max-width: 100%;
+    }
+
+    .add-blog textarea, .add-blog select {
+        min-width: 93%;
+        max-width: 93%;
+    }
+}
