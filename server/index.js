@@ -15,7 +15,8 @@ mongoose.connect(process.env.MONGO_URI)
     .catch(err => console.log(err));
 
 
-app.use(express.static('public'));
+app.use('/blog', express.static(path.join(__dirname, 'public/blog')));
+app.use('/profile', express.static(path.join(__dirname, 'public/profile')));
 
 app.use(cors());
 app.use(express.json());
