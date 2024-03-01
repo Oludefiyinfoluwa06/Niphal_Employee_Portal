@@ -3,6 +3,7 @@ const session = require('express-session');
 const cors = require('cors');
 const dotenv = require('dotenv');
 const mongoose = require('mongoose');
+const path = require('path');
 const employeeRoute = require('./routes/employeeRoute');
 const blogRoute = require('./routes/blogRoute');
 
