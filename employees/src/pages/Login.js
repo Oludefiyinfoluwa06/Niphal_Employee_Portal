@@ -33,7 +33,7 @@ const Login = () => {
 
         setIsLoading(true);
         
-        await axios.post('api/employees/login', { email, password })
+        await axios.post('https://nep-api.vercel.app/api/employees/login', { email, password })
             .then(res => {
                 setIsLoading(false);
                 console.log(res);

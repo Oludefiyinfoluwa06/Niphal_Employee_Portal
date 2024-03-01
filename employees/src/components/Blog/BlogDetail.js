@@ -15,7 +15,7 @@ const BlogDetail = () => {
     useEffect(() => {
         setIsLoading(true);
         
-        axios.get(`api/blogs/employee/${blogId}`, {
+        axios.get(`https://nep-api.vercel.app/api/blogs/employee/${blogId}`, {
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -48,7 +48,7 @@ const BlogDetail = () => {
         <div className='blog-detail'>
             {isLoading ? <Loading /> : 
                 <>
-                    <img src={`images/blog/${blogDetails.blogImage}`} alt={blogDetails.title} />
+                    <img src={`https://nep-api.vercel.app/images/blog/${blogDetails.blogImage}`} alt={blogDetails.title} />
                     <div className="blog-header">
                         <h3>{blogDetails.title}</h3>
                         <h3>{formattedDate}</h3>

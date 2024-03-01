@@ -24,7 +24,7 @@ const Blogs = () => {
 
         setIsLoading(true);
                 
-        axios.get('api/blogs/employee', {
+        axios.get('https://nep-api.vercel.app/api/blogs/employee', {
             headers: {
                 Authorization: `Bearer ${token}`
             }

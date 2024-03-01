@@ -51,7 +51,7 @@ const AddEmployee = () => {
     formData.append('password', password);
 
     try {
-      await axios.post('api/employees/add', formData);
+      await axios.post('http://localhost:5000/api/employees/add', formData);
 
       setIsLoading(false);
       navigate('/employees');
