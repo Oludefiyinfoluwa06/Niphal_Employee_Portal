@@ -109,7 +109,7 @@ const Create = () => {
                                 setCategory(e.target.value);
                                 setError('');
                             }}>
-                                <option value={category}>Select a category</option>
+                                <option value=''>Select a category</option>
                                 <option value='Technology'>Technology</option>
                                 <option value='Business'>Business</option>
                                 <option value='Finance'>Finance</option>

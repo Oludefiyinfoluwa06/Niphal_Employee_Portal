@@ -15,7 +15,7 @@ const Dashboard = () => {
     }, [employee, token, navigate]);
 
     const name = employee.name;
-    const profilePic = `https://nep-api.vercel.app/images/profile/${employee.profilePic}`;
+    const profilePic = `https://nep-api.vercel.app/profile/${employee.profilePic}`;
     
     return (
         <section className='dashboard'>
