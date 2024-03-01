@@ -45,30 +45,31 @@ const Create = () => {
         formData.append('category', category);
         formData.append('content', content);
 
-        try {
-            const res = await axios.post('https://nep-api.vercel.app/api/blogs/create', formData, {
-                headers: {
-                    Authorization: `Bearer ${token}`
-                }
-            });
-
-            console.log(res);
-            navigate('/home/blogs');
-            setIsLoading(false);
-        } catch (err) {
-            console.log(err);
-            if (err.response.data.error === 'No token provided' || err.response.data.error === 'Invalid or expired token') {
-                localStorage.clear();
-                localStorage.removeItem('token');
-                localStorage.removeItem('employee');
-                navigate('/');
-                return;
+        await axios.post('https://nep-api.vercel.app/api/blogs/create', formData, {
+            headers: {
+                Authorization: `Bearer ${token}`
             }
-            setError(err.response.data.error);
-            setIsLoading(false);
-        } finally {
-            setIsLoading(false);
-        }
+        })
+            .then(res => {
+                console.log(res);
+                navigate('/home/blogs');
+                setIsLoading(false);
+            })
+            .catch(err => {
+                console.log(err);
+                if (err.response.data.error === 'No token provided' || err.response.data.error === 'Invalid or expired token') {
+                    localStorage.clear();
+                    localStorage.removeItem('token');
+                    localStorage.removeItem('employee');
+                    navigate('/');
+                    return;
+                }
+                setError(err.response.data.error);
+                setIsLoading(false);
+            })
+            .finally(() => {
+                setIsLoading(false);
+            });
     }
 
     return (
