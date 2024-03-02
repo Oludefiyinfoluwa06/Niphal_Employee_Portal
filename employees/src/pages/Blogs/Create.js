@@ -41,12 +41,12 @@ const Create = () => {
 
         const formData = new FormData();
         formData.append('title', title);
-        formData.append('blogImage', blogImage);
+        formData.append('blogImage', blogImage.name);
         formData.append('category', category);
         formData.append('content', content);
 
         try {
-            const res = await axios.post('http://localhost:5000/api/blogs/create', formData, {
+            const res = await axios.post('https://nep-api.vercel.app/api/blogs/create', formData, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
