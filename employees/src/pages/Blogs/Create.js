@@ -7,7 +7,7 @@ import Loading from '../../components/Loading';
 
 const Create = () => {
     const [title, setTitle] = useState('');
-    const [blogImage, setBlogImage] = useState(null);
+    const [blogImage, setBlogImage] = useState();
     const [category, setCategory] = useState('');
     const [content, setContent] = useState('');
 
@@ -20,7 +20,7 @@ const Create = () => {
     const [step, setStep] = useState(1);
 
     const handleNext = () => {
-        if (title === '' || blogImage === null || category === '') {
+        if (title === '' || !blogImage || category === '') {
             setError('Input fields cannot be empty');
             return;
         }
@@ -45,31 +45,28 @@ const Create = () => {
         formData.append('category', category);
         formData.append('content', content);
 
-        await axios.post('https://nep-api.vercel.app/api/blogs/create', formData, {
-            headers: {
-                Authorization: `Bearer ${token}`
-            }
-        })
-            .then(res => {
-                console.log(res);
-                navigate('/home/blogs');
-                setIsLoading(false);
-            })
-            .catch(err => {
-                console.log(err);
-                if (err.response.data.error === 'No token provided' || err.response.data.error === 'Invalid or expired token') {
-                    localStorage.clear();
-                    localStorage.removeItem('token');
-                    localStorage.removeItem('employee');
-                    navigate('/');
-                    return;
+        try {
+            const res = await axios.post('http://localhost:5000/api/blogs/create', formData, {
+                headers: {
+                    Authorization: `Bearer ${token}`
                 }
-                setError(err.response.data.error);
-                setIsLoading(false);
-            })
-            .finally(() => {
-                setIsLoading(false);
             });
+
+            console.log(res);
+            navigate('/home/blogs');
+        } catch (err) {
+            console.log(err);
+            if (err.response.data.error === 'No token provided' || err.response.data.error === 'Invalid or expired token') {
+                localStorage.clear();
+                localStorage.removeItem('token');
+                localStorage.removeItem('employee');
+                navigate('/');
+                return;
+            }
+            setError(err.response.data.error);
+        } finally {
+            setIsLoading(false);
+        }
     }
 
     return (
